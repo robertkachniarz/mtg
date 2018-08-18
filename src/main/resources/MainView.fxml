@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="476.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.sdacademy.mtg.controller.MainViewController">
+  <children>
+    <MenuBar prefWidth="748.0" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="399.0" prefWidth="713.0" VBox.vgrow="ALWAYS">
+      <children>
+            <SplitPane dividerPositions="0.2782152230971129" layoutX="9.0" layoutY="8.0" prefHeight="445.0" prefWidth="713.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="396.0" prefWidth="176.0">
+                     <children>
+                        <ComboBox fx:id="checkSet" layoutX="9.0" onAction="#loadListCardsFromSet" prefHeight="26.0" prefWidth="188.0" />
+                        <TableView fx:id="cardsTable" layoutX="10.0" layoutY="30.0" prefHeight="405.0" prefWidth="188.0">
+                          <columns>
+                            <TableColumn fx:id="cardNameColumn" prefWidth="186.0" text="Lista kart" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="401.0" prefWidth="431.0">
+                     <children>
+                        <ImageView fx:id="cardImage" fitHeight="311.0" fitWidth="223.0" layoutX="8.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label alignment="CENTER_RIGHT" layoutX="236.0" layoutY="14.0" prefHeight="16.0" prefWidth="90.0" text="Card Name:" textAlignment="RIGHT"><font><Font name="System Bold" size="13.0" /></font></Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="236.0" layoutY="32.0" prefHeight="16.0" prefWidth="90.0" text="Mana cost:" textAlignment="RIGHT"><font><Font name="System Bold" size="13.0" /></font></Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="236.0" layoutY="50.0" prefHeight="16.0" prefWidth="90.0" text="CMC:" textAlignment="RIGHT"><font><Font name="System Bold" size="13.0" /></font></Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="236.0" layoutY="68.0" prefHeight="16.0" prefWidth="90.0" text="Types:" textAlignment="RIGHT"><font><Font name="System Bold" size="13.0" /></font></Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="236.0" layoutY="86.0" prefHeight="16.0" prefWidth="90.0" text="Card Text:" textAlignment="RIGHT"><font><Font name="System Bold" size="13.0" /></font></Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="236.0" layoutY="343.0" prefHeight="16.0" prefWidth="90.0" text="Expansion:" textAlignment="RIGHT"><font><Font name="System Bold" size="13.0" /></font></Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="236.0" layoutY="363.0" prefHeight="16.0" prefWidth="90.0" text="Rarity:" textAlignment="RIGHT"><font><Font name="System Bold" size="13.0" /></font></Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="236.0" layoutY="383.0" prefHeight="16.0" prefWidth="90.0" text="Artist:" textAlignment="RIGHT"><font><Font name="System Bold" size="13.0" /></font></Label>
+                        <Label layoutX="14.0" layoutY="343.0" prefHeight="16.0" prefWidth="90.0" text="Flavor Text:" textAlignment="RIGHT"><font><Font name="System Bold" size="13.0" /></font></Label>
+                        <Label fx:id="cardNameLabel" layoutX="331.0" layoutY="14.0" prefHeight="16.0" prefWidth="200.0" text="cardNameLabel" textAlignment="RIGHT">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="manaCostLabel" layoutX="331.0" layoutY="32.0" prefHeight="16.0" prefWidth="195.0" text="manaCostLabel" textAlignment="RIGHT" />
+                        <Label fx:id="cmcLabel" layoutX="331.0" layoutY="50.0" prefHeight="16.0" prefWidth="200.0" text="cmcLabel" textAlignment="RIGHT" />
+                        <Label fx:id="typesLabel" layoutX="331.0" layoutY="68.0" prefHeight="16.0" prefWidth="200.0" text="typesLabel" textAlignment="RIGHT" />
+                        <Label fx:id="cardTextLabel" alignment="TOP_LEFT" layoutX="331.0" layoutY="86.0" prefHeight="253.0" prefWidth="200.0" text="cardTextLabel" textAlignment="LEFT" wrapText="true" />
+                        <Label fx:id="expansionLabel" layoutX="331.0" layoutY="343.0" prefHeight="16.0" prefWidth="200.0" text="expansionLabel" textAlignment="RIGHT" />
+                        <Label fx:id="rarityLabel" layoutX="331.0" layoutY="363.0" prefHeight="16.0" prefWidth="200.0" text="rarityLabel" textAlignment="RIGHT" />
+                        <Label fx:id="artistLabel" layoutX="331.0" layoutY="383.0" prefHeight="16.0" prefWidth="200.0" text="artistLabel" textAlignment="RIGHT" />
+                        <Label fx:id="flavorTextLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="359.0" prefHeight="79.0" prefWidth="223.0" text="flavorTextLabel" textAlignment="LEFT" wrapText="true" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
